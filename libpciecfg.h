@@ -120,18 +120,37 @@ PCI_CFG_DEFUN(pciecfg_latency_timer,	PCI_CFG_LATENCY_TIMER, 8);
 PCI_CFG_DEFUN(pciecfg_header_type,	PCI_CFG_HEADER_TYPE, 8);
 PCI_CFG_DEFUN(pciecfg_self_test,	PCI_CFG_SELF_TEST, 8);
 
-PCI_CFG_DEFUN(pciecfg_bar0,	PCI_CFG_BAR0, 32);
-PCI_CFG_DEFUN(pciecfg_bar1,	PCI_CFG_BAR1, 32);
-PCI_CFG_DEFUN(pciecfg_bar2,	PCI_CFG_BAR2, 32);
-PCI_CFG_DEFUN(pciecfg_bar3,	PCI_CFG_BAR3, 32);
-PCI_CFG_DEFUN(pciecfg_bar4,	PCI_CFG_BAR4, 32);
-PCI_CFG_DEFUN(pciecfg_bar5,	PCI_CFG_BAR5, 32);
 
 PCI_CFG_DEFUN(pciecfg_carbus_ptr,	PCI_CFG_CARDBUS_PTR, 8);
 PCI_CFG_DEFUN(pciecfg_subsys_vendorid,	PCI_CFG_SUBSYS_VENDORID, 16);
 PCI_CFG_DEFUN(pciecfg_subsys_id,	PCI_CFG_SUBSYS_ID, 16);
 PCI_CFG_DEFUN(pciecfg_rom_base_addr,	PCI_CFG_ROM_BASE_ADDR, 32);
 PCI_CFG_DEFUN(pciecfg_cap_ptr,		PCI_CFG_CAP_PTR, 8);
+
+
+uint32_t pciecfg_bar(struct pciecfg *pcfg, int bar)
+{
+	return pciecfg_get32(pcfg, PCI_CFG_BAR0 + (bar << 2));
+}
+
+
+#define pciecfg_bar_is_portio(bar)	(bar & 0x01)
+#define pciecfg_bar_is_64bit(bar)	(bar & 0x04)
+#define pciecfg_bar_is_prefetch(bar)	(bar & 0x08)
+
+uint64_t pciecfg_bar_addr(struct pciecfg *pcfg, int bar)
+{
+	uint64_t addr = 0, tmp = 0;
+
+	addr = pciecfg_bar(pcfg, bar);
+	if (pciecfg_bar_is_64bit(addr)) {
+		/* 64bit BAR */
+		tmp = pciecfg_bar(pcfg, bar + 1);
+		addr |= (tmp << 32);
+	}
+
+	return addr & (~(uint64_t)0x0F);
+}
 
 
 
