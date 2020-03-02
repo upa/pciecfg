@@ -104,34 +104,34 @@ uint32_t pciecfg_get32(struct pciecfg *pcfg, size_t offset)
 		return pciecfg_get##BW(pcfg, OF);	\
 	}
 
-PCI_CFG_DEFUN(pciecfg_deviceid,	PCI_CFG_DEVICEID, 16)
-PCI_CFG_DEFUN(pciecfg_command,	PCI_CFG_COMMAND, 16)
+PCI_CFG_DEFUN(pciecfg_deviceid,	PCI_CFG_DEVICEID, 16);
+PCI_CFG_DEFUN(pciecfg_command,	PCI_CFG_COMMAND, 16);
 
-PCI_CFG_DEFUN(pciecfg_vendorid,	PCI_CFG_VENDORID, 16)
-PCI_CFG_DEFUN(pciecfg_status,	PCI_CFG_STATUS, 16)
+PCI_CFG_DEFUN(pciecfg_vendorid,	PCI_CFG_VENDORID, 16);
+PCI_CFG_DEFUN(pciecfg_status,	PCI_CFG_STATUS, 16);
 
-PCI_CFG_DEFUN(pciecfg_revision,		PCI_CFG_STATUS, 8)
-PCI_CFG_DEFUN(pciecfg_prog_interface,	PCI_CFG_PROG_INTERFACE, 8)
-PCI_CFG_DEFUN(pciecfg_subclass,		PCI_CFG_SUBCLASS, 8)
-PCI_CFG_DEFUN(pciecfg_baseclass,	PCI_CFG_BASECLASS, 8)
+PCI_CFG_DEFUN(pciecfg_revision,		PCI_CFG_STATUS, 8);
+PCI_CFG_DEFUN(pciecfg_prog_interface,	PCI_CFG_PROG_INTERFACE, 8);
+PCI_CFG_DEFUN(pciecfg_subclass,		PCI_CFG_SUBCLASS, 8);
+PCI_CFG_DEFUN(pciecfg_baseclass,	PCI_CFG_BASECLASS, 8);
 
-PCI_CFG_DEFUN(pciecfg_cachelinesz, 	PCI_CFG_CACHELINESZ, 8)
-PCI_CFG_DEFUN(pciecfg_latency_timer,	PCI_CFG_LATENCY_TIMER, 8)
-PCI_CFG_DEFUN(pciecfg_header_type,	PCI_CFG_HEADER_TYPE, 8)
-PCI_CFG_DEFUN(pciecfg_self_test,	PCI_CFG_SELF_TEST, 8)
+PCI_CFG_DEFUN(pciecfg_cachelinesz, 	PCI_CFG_CACHELINESZ, 8);
+PCI_CFG_DEFUN(pciecfg_latency_timer,	PCI_CFG_LATENCY_TIMER, 8);
+PCI_CFG_DEFUN(pciecfg_header_type,	PCI_CFG_HEADER_TYPE, 8);
+PCI_CFG_DEFUN(pciecfg_self_test,	PCI_CFG_SELF_TEST, 8);
 
-PCI_CFG_DEFUN(pciecfg_bar0,	PCI_CFG_BAR0, 32)
-PCI_CFG_DEFUN(pciecfg_bar1,	PCI_CFG_BAR1, 32)
-PCI_CFG_DEFUN(pciecfg_bar2,	PCI_CFG_BAR2, 32)
-PCI_CFG_DEFUN(pciecfg_bar3,	PCI_CFG_BAR3, 32)
-PCI_CFG_DEFUN(pciecfg_bar4,	PCI_CFG_BAR4, 32)
-PCI_CFG_DEFUN(pciecfg_bar5,	PCI_CFG_BAR5, 32)
+PCI_CFG_DEFUN(pciecfg_bar0,	PCI_CFG_BAR0, 32);
+PCI_CFG_DEFUN(pciecfg_bar1,	PCI_CFG_BAR1, 32);
+PCI_CFG_DEFUN(pciecfg_bar2,	PCI_CFG_BAR2, 32);
+PCI_CFG_DEFUN(pciecfg_bar3,	PCI_CFG_BAR3, 32);
+PCI_CFG_DEFUN(pciecfg_bar4,	PCI_CFG_BAR4, 32);
+PCI_CFG_DEFUN(pciecfg_bar5,	PCI_CFG_BAR5, 32);
 
-PCI_CFG_DEFUN(pciecfg_carbus_ptr,	PCI_CFG_CARDBUS_PTR, 8)
-PCI_CFG_DEFUN(pciecfg_subsys_vendorid,	PCI_CFG_SUBSYS_VENDORID, 16)
-PCI_CFG_DEFUN(pciecfg_subsys_id,	PCI_CFG_SUBSYS_ID, 16)
-PCI_CFG_DEFUN(pciecfg_rom_base_addr,	PCI_CFG_ROM_BASE_ADDR, 32)
-PCI_CFG_DEFUN(pciecfg_cap_ptr,		PCI_CFG_CAP_PTR, 8)
+PCI_CFG_DEFUN(pciecfg_carbus_ptr,	PCI_CFG_CARDBUS_PTR, 8);
+PCI_CFG_DEFUN(pciecfg_subsys_vendorid,	PCI_CFG_SUBSYS_VENDORID, 16);
+PCI_CFG_DEFUN(pciecfg_subsys_id,	PCI_CFG_SUBSYS_ID, 16);
+PCI_CFG_DEFUN(pciecfg_rom_base_addr,	PCI_CFG_ROM_BASE_ADDR, 32);
+PCI_CFG_DEFUN(pciecfg_cap_ptr,		PCI_CFG_CAP_PTR, 8);
 
 
 
